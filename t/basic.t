@@ -42,11 +42,11 @@ like($rev_list[0], qr/^[a-f\d]{40} FIRST$/);
 eval { $git->moo }; # very unlikely to exist, help.autocorrect guesses 'log'
 if (my $e = $@) {   # autocorrect is off
   if ($git->version lt '1.6') {
-    like($e, qr/which does not exist/);
+    like($e, qr/which does not exist|Permission denied/);
   } elsif ($git->version lt '1.7') {
-    like($e, qr/is not a git-command/);
+    like($e, qr/is not a git-command|Permission denied/);
   } else {
-    like($e, qr/is not a git command/);
+    like($e, qr/is not a git command|Permission denied/);
   }
 }
 

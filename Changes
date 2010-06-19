@@ -1,5 +1,8 @@
 Revision history for Git-Wrapper
 
+        Work-around for tests failing on some machines due
+         to how git resolves paths and responds to those. ( rt58518 - Kent Fredric )
+
 0.010   2010-06-14
         
         Win32 Support -- Docs and Tests (Christian Walde)
